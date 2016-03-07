@@ -1,0 +1,57 @@
+{
+  "name": "cli-factory",
+  "version": "1.0.0",
+  "description": "NodeJS CLI starter kit",
+  "main": "lib/index.js",
+  "bin": {
+    "factory": "lib/bin"
+  },
+  "scripts": {
+    "build": "babel src/ -d lib/ -s",
+    "build:watch": "npm run build -- -w",
+    "test": "npm run test-eslint && npm run test-mocha",
+    "test-eslint": "eslint src",
+    "test-mocha": "mkdir .tmp 2> /dev/null; mocha --compilers js:babel-register",
+    "test-mocha:watch": "npm run test-mocha -- -w",
+    "prepublish": "npm run build",
+    "start": "parallelshell 'npm run build:watch' 'npm run test-mocha:watch'"
+  },
+  "engines": {
+    "node": "^4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgcrea/node-easyrsa.git"
+  },
+  "author": {
+    "name": "Olivier Louvignes",
+    "email": "olivier@mg-crea.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.3",
+    "chalk": "^1.1.1",
+    "core-error-predicates": "^1.1.0",
+    "lodash": "^4.6.1",
+    "source-map-support": "^0.4.0",
+    "yargs": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-transform-class-properties": "^6.6.0",
+    "babel-plugin-transform-function-bind": "^6.5.2",
+    "babel-plugin-transform-object-rest-spread": "^6.6.5",
+    "babel-preset-es2015-node": "^5.0.2",
+    "babel-register": "^6.6.5",
+    "chai": "^3.5.0",
+    "eslint": "^2.3.0",
+    "eslint-config-mgcrea": "^6.0.0",
+    "mocha": "^2.4.5",
+    "parallelshell": "^2.0.0",
+    "sinon": "^1.17.3"
+  },
+  "optionalDependencies": {
+    "ursa": "^0.9.3"
+  }
+}

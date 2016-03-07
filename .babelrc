@@ -1,0 +1,7 @@
+{
+  "presets": ["es2015-node"],
+  "plugins": ["transform-class-properties", "transform-function-bind", "transform-object-rest-spread"],
+  "ignore": [
+    "node_modules/"
+  ]
+}
